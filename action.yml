@@ -2,23 +2,35 @@ name: 'Package VS Code Extension'
 description: 'Packages a VS Code extension as a VSIX package'
 author: 'Nicolas Hedger'
 inputs:
-  ignoreFile:
-    default: .vscodeignore
+  extensionPath:
     required: false
-    description: Path to an alternative .vscodeignore file
-  rootDir:
     default: .
-    required: true
-    description: "Directory that in which the extension's package.json manifest lives."
-  version:
-    default: auto
+    description: Path to the root directory of the unpackaged extension
+  packagePath:
     required: false
-    description: "Version number of the packaged extension."
-  pre-release:
-    default: "false"
+    default: extension.vsix
+    description: Destination path of the packaged VSIX
+  baseContentUrl:
     required: false
-    description: Mark the package as a pre-release
-
+    description: Base URL for links detected in Markdown files
+  baseImagesUrl:
+    required: false
+    description: Base URL for images detected in Markdown files
+  githubBranch:
+    required: false
+    description: Github branch used to publish the package. Used to automatically infer the base content and images URI.
+  gitlabBranch:
+    required: false
+    description: GitLab branch used to publish the package. Used to automatically infer the base content and images URI.
+  useYarn:
+    required: false
+    description: Use Yarn instead of NPM
+  targetPlatform:
+    required: false
+    description: Target platform the extension should run on
+  preRelease:
+    required: false
+    description: Whether to mark the package as a pre-release
 runs:
   using: 'node16'
   main: 'dist/index.js'

@@ -1,19 +1,43 @@
-import * as core from '@actions/core'
-import {wait} from './wait'
+import { getBooleanInput, getInput, setFailed } from "@actions/core";
+import { resolve } from "path";
+import process from "process";
+import { createVSIX, ICreateVSIXOptions } from "vsce";
 
 async function run(): Promise<void> {
-  try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_STEP_DEBUG` to true
+    try {
+        // Collect action input
+        const extensionPath = getInput("extensionPath");
+        const packagePath = getInput("packagePath");
+        const baseContentUrl = getInput("baseContentUrl");
+        const baseImagesUrl = getInput("baseImageUrl");
+        const githubBranch = getInput("githubBranch");
+        const gitlabBranch = getInput("gitlabBranch");
+        const useYarn = getBooleanInput("useYarn");
+        const target = getInput("targetPlatform");
+        const preRelease = getBooleanInput("preRelease");
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
+        // Map input to packaging options
+        const packagingOptions: ICreateVSIXOptions = {
+            cwd: resolve(process.cwd(), extensionPath ?? "."),
+            packagePath: resolve(
+                process.cwd(),
+                packagePath ?? "extension.vsix"
+            ),
+            baseContentUrl,
+            baseImagesUrl,
+            githubBranch,
+            gitlabBranch,
+            useYarn,
+            target,
+            preRelease,
+        };
 
-    core.setOutput('time', new Date().toTimeString())
-  } catch (error) {
-    if (error instanceof Error) core.setFailed(error.message)
-  }
+        // Build package
+        const result = await createVSIX(packagingOptions);
+
+    } catch (error) {
+        if (error instanceof Error) setFailed(error.message);
+    }
 }
 
-run()
+run();
