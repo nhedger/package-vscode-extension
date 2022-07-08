@@ -1,0 +1,24 @@
+name: 'Package VS Code Extension'
+description: 'Packages a VS Code extension as a VSIX package'
+author: 'Nicolas Hedger'
+inputs:
+  ignoreFile:
+    default: .vscodeignore
+    required: false
+    description: Path to an alternative .vscodeignore file
+  rootDir:
+    default: .
+    required: true
+    description: "Directory that in which the extension's package.json manifest lives."
+  version:
+    default: auto
+    required: false
+    description: "Version number of the packaged extension."
+  pre-release:
+    default: "false"
+    required: false
+    description: Mark the package as a pre-release
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
