@@ -1,4 +1,6 @@
 import { getInput } from '@actions/core';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 /**
  * Retrieves an input variable
@@ -16,9 +18,8 @@ export const input = (name: string, fallback?: string): string => {
     return value === '' && fallback ? fallback : value;
 };
 
-
-
-export const makePackageName = (extensionPath: string) => {
-    // Read package.json, find the version
-    return 'extension.vsix';
-}
+export const makePackageName = async (extensionPath: string) => {
+    const packageJson = await readFile(join(extensionPath, 'package.json'), 'utf-8');
+    const fields: any = JSON.parse(packageJson);
+    return `${fields.name}-${fields.version}`
+};
