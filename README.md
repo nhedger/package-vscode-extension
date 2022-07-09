@@ -6,17 +6,17 @@ This repository contains the source code for the `Package VS Code Extension` Git
 
 This action accepts the following **optional** inputs.
 
-| Name             | Default                           | Description                                                                                                                      |
-| ---------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `extensionPath`  | `$GITHUB_WORKSPACE`               | Path to the root directory of the unpackaged extension. This is the directoy that holds the extension's `package.json` manifest. |
-| `packagePath`    | `${extensionPath}/extension.vsix` | Path to which the VSIX package should be written                                                                                 |
-| `baseContentUrl` |                                   | Base URL for links detected in Markdown files.                                                                                   |
-| `baseImagetUrl`  |                                   | Base URL for images detected in Markdown files.                                                                                  |
-| `githubBranch`   |                                   | GitHub branch used to publish the package. Used to automatically infer the base content and images URI.                          |
-| `gitlabBranch`   |                                   | GitLab branch used to publish the package. Used to automatically infer the base content and images URI.                          |
-| `useYarn`        | `false`                           | Whether to use Yarn instead of NPM.                                                                                              |
-| `targetPlatform` |                                   | Target platform the extension should run on.                                                                                     |
-| `preRelease`     | `false`                           | Whether to mark the package as a pre-release.                                                                                    |
+| Name             | Description                                                                                                                    |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `extensionPath`  | Path to the root directory of the extension (default: `$GITHUB_WORKSPACE`).                                                    |
+| `packagePath`    | Output path of the generated VSIX package (default: `${extensionPath}/extension.vsix`).                                        |
+| `baseContentUrl` | Base URL for links detected in Markdown files (default: `undefined`).                                                          |
+| `baseImagetUrl`  | Base URL for images detected in Markdown files (default: `undefined`).                                                         |
+| `githubBranch`   | GitHub branch used to publish the package. Used to automatically infer the base content and images URI (default: `undefined`). |
+| `gitlabBranch`   | GitLab branch used to publish the package. Used to automatically infer the base content and images URI (default: `undefined`). |
+| `useYarn`        | Whether to use Yarn instead of NPM (default: `false`).                                                                         |
+| `targetPlatform` | Target platform the extension should run on (default: `undefined`).                                                            |
+| `preRelease`     | Whether to mark the package as a pre-release (default: `false`).                                                               |
 
 ## Outputs
 
