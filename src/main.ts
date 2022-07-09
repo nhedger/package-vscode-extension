@@ -15,7 +15,7 @@ const run = async () => {
         cwd(),
         input(
             'packagePath',
-            join(extensionPath, makePackageName(extensionPath)),
+            join(extensionPath, await makePackageName(extensionPath)),
         ),
     );
 
