@@ -1,4 +1,7 @@
 name: 'Package VS Code Extension'
+branding:
+  icon: package
+  color: blue
 description: 'Package VS Code extension to VSIX'
 author: 'Nicolas Hedger'
 inputs:
