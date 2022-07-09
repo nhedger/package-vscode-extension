@@ -21,5 +21,5 @@ export const input = (name: string, fallback?: string): string => {
 export const makePackageName = async (extensionPath: string) => {
     const packageJson = await readFile(join(extensionPath, 'package.json'), 'utf-8');
     const fields: any = JSON.parse(packageJson);
-    return `${fields.name}-${fields.version}`
+    return `${fields.name}-${fields.version}.vsix`
 };
