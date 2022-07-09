@@ -8,8 +8,8 @@ This action accepts the following inputs.
 
 | Name             | Required | Default                          | Description                                                                                                                      |
 | ---------------- | -------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `extensionPath`  | NO       | `./`                             | Path to the root directory of the unpackaged extension. This is the directoy that holds the extension's `package.json` manifest. |
-| `packagePath`    | NO       | `{extensionPath}/extension.vsix` | Path to which the VSIX package should be written                                                                                 |
+| `extensionPath`  | NO       | `$GITHUB_WORKSPACE`                             | Path to the root directory of the unpackaged extension. This is the directoy that holds the extension's `package.json` manifest. |
+| `packagePath`    | NO       | `${extensionPath}/extension.vsix` | Path to which the VSIX package should be written                                                                                 |
 | `baseContentUrl` | NO       |                                  | Base URL for links detected in Markdown files.                                                                                   |
 | `baseImagetUrl`  | NO       |                                  | Base URL for images detected in Markdown files.                                                                                  |
 | `githubBranch`   | NO       |                                  | GitHub branch used to publish the package. Used to automatically infer the base content and images URI.                          |
