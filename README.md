@@ -4,19 +4,19 @@ This repository contains the source code for the `Package VS Code Extension` Git
 
 ## Inputs
 
-This action accepts the following inputs.
+This action accepts the following **optional** inputs.
 
-| Name             | Required | Default                          | Description                                                                                                                      |
-| ---------------- | -------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `extensionPath`  | NO       | `$GITHUB_WORKSPACE`                             | Path to the root directory of the unpackaged extension. This is the directoy that holds the extension's `package.json` manifest. |
-| `packagePath`    | NO       | `${extensionPath}/extension.vsix` | Path to which the VSIX package should be written                                                                                 |
-| `baseContentUrl` | NO       |                                  | Base URL for links detected in Markdown files.                                                                                   |
-| `baseImagetUrl`  | NO       |                                  | Base URL for images detected in Markdown files.                                                                                  |
-| `githubBranch`   | NO       |                                  | GitHub branch used to publish the package. Used to automatically infer the base content and images URI.                          |
-| `gitlabBranch`   | NO       |                                  | GitLab branch used to publish the package. Used to automatically infer the base content and images URI.                          |
-| `useYarn`        | NO       | `false`                          | Whether to use Yarn instead of NPM.                                                                                              |
-| `targetPlatform` | NO       |                                  | Target platform the extension should run on.                                                                                     |
-| `preRelease`     | NO       | `false`                          | Whether to mark the package as a pre-release.                                                                                    |
+| Name             | Default                           | Description                                                                                                                      |
+| ---------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `extensionPath`  | `$GITHUB_WORKSPACE`               | Path to the root directory of the unpackaged extension. This is the directoy that holds the extension's `package.json` manifest. |
+| `packagePath`    | `${extensionPath}/extension.vsix` | Path to which the VSIX package should be written                                                                                 |
+| `baseContentUrl` |                                   | Base URL for links detected in Markdown files.                                                                                   |
+| `baseImagetUrl`  |                                   | Base URL for images detected in Markdown files.                                                                                  |
+| `githubBranch`   |                                   | GitHub branch used to publish the package. Used to automatically infer the base content and images URI.                          |
+| `gitlabBranch`   |                                   | GitLab branch used to publish the package. Used to automatically infer the base content and images URI.                          |
+| `useYarn`        | `false`                           | Whether to use Yarn instead of NPM.                                                                                              |
+| `targetPlatform` |                                   | Target platform the extension should run on.                                                                                     |
+| `preRelease`     | `false`                           | Whether to mark the package as a pre-release.                                                                                    |
 
 ## Outputs
 
