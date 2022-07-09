@@ -1,0 +1,39 @@
+name: 'Package VS Code Extension'
+description: 'Package VS Code extension to VSIX'
+author: 'Nicolas Hedger'
+inputs:
+  extensionPath:
+    required: false
+    description: Path to the unbundled extension.
+  packagePath:
+    required: false
+    description: Path to the generated VSIX package.
+  baseContentUrl:
+    required: false
+    description: Base URL for links detected in Markdown files.
+  baseImagetUrl:
+    required: false
+    description: Base URL for images detected in Markdown files.
+  githubBranch:
+    required: false
+    description: GitHub branch used to publish the package. Used to automatically infer the base content and images URI.
+  gitlabBranch:
+    required: false
+    description: GitLab branch used to publish the package. Used to automatically infer the base content and images URI.
+  useYarn:
+    required: false
+    default: 'false'
+    description: Whether to use Yarn instead of NPM.
+  targetPlatform:
+    required: false
+    description: Target platform the extension should run on.
+  preRelease:
+    required: false
+    default: 'false'
+    description: Whether to mark the package as a pre-release
+outputs:
+  packagePath:
+    description: Path to the VSIX package
+runs:
+  using: node16
+  main: dist/action.js
