@@ -1,15 +1,19 @@
 {
     "name": "package-vscode-extension",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "Package VS Code Extension from GitHub Actions",
     "scripts": {
         "build": "webpack build",
         "watch": "webpack watch"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "keywords": [
+        "vscode", "github-action"
+    ],
+    "author": {
+        "name": "Nicolas Hedger",
+        "email": "nicolas@hedger.ch"
+    },
+    "license": "MIT",
     "devDependencies": {
         "@types/node": "^18.0.3",
         "@types/webpack": "^5.28.0",
