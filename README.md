@@ -9,7 +9,7 @@ This action accepts the following **optional** inputs.
 | Name             | Description                                                                                                                    |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | `extensionPath`  | Path to the root directory of the extension (default: `$GITHUB_WORKSPACE`).                                                    |
-| `packagePath`    | Output path of the generated VSIX package (default: `${extensionPath}/extension.vsix`).                                        |
+| `packagePath`    | Output path of the generated VSIX package (default: `${extensionPath}/[name]-[version].vsix`).                                        |
 | `baseContentUrl` | Base URL for links detected in Markdown files (default: `undefined`).                                                          |
 | `baseImagetUrl`  | Base URL for images detected in Markdown files (default: `undefined`).                                                         |
 | `githubBranch`   | GitHub branch used to publish the package. Used to automatically infer the base content and images URI (default: `undefined`). |
