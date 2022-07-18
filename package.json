@@ -26,6 +26,6 @@
     },
     "dependencies": {
         "@actions/core": "^1.9.0",
-        "vsce": "^2.9.2"
+        "vsce": "^2.9.3"
     }
 }
