@@ -10,7 +10,7 @@ import { cwd } from 'process';
 
 const run = async () => {
     // Collect inputs
-    const extensionPath = resolve(cwd(), input('extensionPath', '.'));
+    const extensionPath = resolve(cwd(), input('extensionPath', process.env['GITHUB_WORKSPACE']));
     const packagePath = resolve(
         cwd(),
         input(
