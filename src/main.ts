@@ -2,6 +2,7 @@ import {
     getBooleanInput as boolInput,
     setOutput,
     setFailed,
+    info,
 } from '@actions/core';
 import { join, resolve } from 'path';
 import { makePackageName, input } from './utils';
@@ -18,6 +19,8 @@ const run = async () => {
             join(extensionPath, await makePackageName(extensionPath)),
         ),
     );
+
+    info(`extensionPath: ${extensionPath}`)
 
     try {
         const pkg = await createVSIX({
