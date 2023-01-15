@@ -20,6 +20,10 @@
 
 		}]
 	},
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:nhedger/package-vscode-extension.git"
+    },
 	"scripts": {
 		"lint": "eslint .",
 		"pretest": "npm run lint",
