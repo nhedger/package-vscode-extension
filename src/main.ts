@@ -6,7 +6,7 @@ import {
 } from '@actions/core';
 import { join, resolve } from 'path';
 import { makePackageName, input } from './utils';
-import { createVSIX } from 'vsce';
+import { createVSIX } from '@vscode/vsce';
 import { cwd } from 'process';
 
 const run = async () => {
